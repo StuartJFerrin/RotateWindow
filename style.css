@@ -26,9 +26,9 @@
   
   #cube .front  { opacity: 0.5; background-color: green; transform: rotateY(   0deg ) translateZ( 0px ); }
   #cube .back   { opacity: 0.5; background-color: red; transform: rotateX( 180deg ) translateZ( 250px ); }
-  #cube .right  { background-color: blue; transform: rotateY(  90deg ) translateZ( 250px ); }
+  #cube .right  { background-color: blue; transform: rotateY(  90deg ) translateZ( -250px ); }
     /* rotateY( 413deg ) translateZ( -200px ) translatex(-400px); */
-  #cube .left   { background-color: yellow; transform: rotateY( -90deg ) translateZ( 250px ); }
+  #cube .left   { background-color: yellow; transform: rotateY( -90deg ) translateZ( -250px ); }
 
 
   #cube.show-front  { transform: translateZ( -250px ) rotateY(    0deg ); }
