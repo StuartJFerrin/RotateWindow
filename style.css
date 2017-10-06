@@ -1,3 +1,15 @@
+:root {
+  --position1: 0deg;
+  --position2: 90deg;
+  --position3: 180deg;
+  --position4: 270deg;
+  --position1-2: var(--position1) + 90deg;
+  --position2-2: var(--position2) + 90deg;
+  --position3-2: var(--position3) + 90deg;
+  --position4-2: var(--position4) + 90deg;
+  
+}
+
 .template  {
   position: absolute;
   height: 100%;
@@ -11,6 +23,14 @@
   background-size: cover;
 }
 
+button {
+  position: relative;
+  top: 50%;
+  left: 12vw;
+  z-index: 1;
+
+
+}
 .container {
     width: 100%;
     height: 100%;
@@ -33,20 +53,22 @@
     display: block;
     position: absolute;
     border: 2px solid black;
+
   }
 
   
-  #cube .front  { opacity: 0.5; background-color: green; transform: rotateY(   0deg ) translateZ( 0px ); }
-  #cube .back   { opacity: 0.5; background-color: red; transform: rotateX( 180deg ) translateZ( 250px ); }
-  #cube .right  { background-color: blue; transform: rotateY(  90deg ); transform-origin: 50vw 0vh 50vw;  }
-    /* rotateY(  90deg ) translateZ( -60vw ) translatex( -65vh) */
-    /* transform-origin 50vw 0vh 50vw */
-  #cube .left   { background-color: yellow; transform: rotateY( -90deg ); transform-origin: 50vw 0vh 50vw; }
+  #cube .front  { opacity: 0.5; background-color: green; transform: rotateY(   var(--position1) ); transform-origin: 50vw 0vh 50vw; backface-visibility: hidden; }
+  #cube .back   { opacity: 0.5; background-color: red; transform: rotateY( var(--position2) ); transform-origin: 50vw 0vh 50vw; backface-visibility: hidden; }
+  #cube .right  { opacity: 0.5; background-color: blue; transform: rotateY(  var(--position3) ); transform-origin: 50vw 0vh 50vw;  backface-visibility: hidden;}
+  #cube .left   { opacity: 0.5; background-color: yellow; transform: rotateY( var(--position4) ); transform-origin: 50vw 0vh 50vw; backface-visibility: hidden;}
 
 
   #cube.show-front  { transform: translateZ( -250px ) rotateY(    0deg ); }
-  #cube.show-back   { transform: translateZ( -250px ) rotateX( -180deg ); }
+  #cube.show-back   { transform: translateZ( -250px ) rotateY( 180deg ); }
   #cube.show-right  { transform: translateZ( -250px ) rotateY(  -90deg ); }
   #cube.show-left   { transform: translateZ( -250px ) rotateY(   90deg ); }
 
   #cube { transition: transform 1s; }
+
+/* body, a:hover {cursor: url(http://cur.cursors-4u.net/games/gam-10/gam948.ani), url(http://cur.cursors-4u.net/games/gam-10/gam948.png), progress !important;} End http://www.cursors-4u.com */
+body, a:hover {cursor: url(http://cur.cursors-4u.net/games/gam-10/gam952.ani), url(http://cur.cursors-4u.net/games/gam-10/gam952.png), progress !important;} /* End http://www.cursors-4u.com */
