@@ -1,9 +1,21 @@
+.template  {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+  opacity: .3;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .container {
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     position: relative;
     perspective: 1000px;
-    margin: 10% 20%;
   }
   
   #cube {
@@ -11,13 +23,13 @@
     height: 100%;
     position: absolute;
     transform-style: preserve-3d;
-    transform: translateZ( -100px );
+    transform: translateZ( -20vw );
   }
   
   #cube figure {
     margin: 0;
-    width: 496px;
-    height: 496px;
+    width: 100vw;
+    height: 100vh;
     display: block;
     position: absolute;
     border: 2px solid black;
@@ -26,9 +38,10 @@
   
   #cube .front  { opacity: 0.5; background-color: green; transform: rotateY(   0deg ) translateZ( 0px ); }
   #cube .back   { opacity: 0.5; background-color: red; transform: rotateX( 180deg ) translateZ( 250px ); }
-  #cube .right  { background-color: blue; transform: rotateY(  90deg ) translateZ( -250px ); }
-    /* rotateY( 413deg ) translateZ( -200px ) translatex(-400px); */
-  #cube .left   { background-color: yellow; transform: rotateY( -90deg ) translateZ( -250px ); }
+  #cube .right  { background-color: blue; transform: rotateY(  90deg ); transform-origin: 50vw 0vh 50vw;  }
+    /* rotateY(  90deg ) translateZ( -60vw ) translatex( -65vh) */
+    /* transform-origin 50vw 0vh 50vw */
+  #cube .left   { background-color: yellow; transform: rotateY( -90deg ); transform-origin: 50vw 0vh 50vw; }
 
 
   #cube.show-front  { transform: translateZ( -250px ) rotateY(    0deg ); }

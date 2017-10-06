@@ -1,0 +1,458 @@
+/* transition: all .5s linear;
+transform: rotateY(90deg);
+transform-origin: 540px 0 564px;
+transform-style: preserve-3d; */
+
+html,
+body,
+#root,
+.App {
+  width: 100%;
+  height: 100%;
+  
+}
+
+
+.reference {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+  opacity: .3;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  transform: translatez(-50vh);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.top {
+  position: fixed;
+  background-color: rgba(212, 71, 99, 0.4);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  z-index: 1;
+  top: 20px;
+}
+
+.rowOne {
+  width: 100%;
+  display: flex;
+}
+.hearts {
+  background: yellow;
+  padding-top: 1.4px;
+  left: 110px;
+  width: 430px;;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  position: relative;
+
+
+}
+.heart {
+  background: red;
+  width: 40px;
+  height: 35px;
+  margin-bottom: 4px;
+  margin-right: 1.4px;
+  
+}
+
+
+.redButton {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 66px;
+  width: 66px;
+  height: 66px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  position: relative;
+  left: 160px;
+  border-style: outset;
+  border-color: red;
+  border-width: 5px;
+
+}
+
+.greenButton {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 85px;
+  width: 85px;
+  height: 85px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  position: relative;
+  left: 230px;
+  border-style: outset;
+  border-color: green;
+  border-width: 5px;
+}
+
+.blueButton {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 85px;
+  width: 85px;
+  height: 85px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  position: relative;
+  left: 270px;
+  border-style: outset;
+  border-color: blue;
+  border-width: 5px;
+}
+
+.arrowButtons {
+  background-color: white;
+  position: relative;
+  left: 310px
+}
+
+.leftYellowArrow {
+  background-color: yellow;
+  width: 85px;
+  height: 85px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  position: relative;
+  top: 2px;
+  left: 6px;
+  display: inline-block;
+  border-style: outset;
+  border-color: yellow;
+  border-width: 5px;
+}
+
+.arrow-left {
+  z-index: 2;
+  width: 0; 
+  height: 0; 
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 40px solid yellow;
+  border-style: inset;
+  margin: 0 auto;
+  top: 10px;
+  left: 10px;
+  position: relative;
+}
+
+.downYellowArrow {
+  background-color: yellow;
+  width: 85px;
+  height: 85px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  position: relative;
+  top: 48px;
+  left: 5px;
+  display: inline-block;
+  border-style: outset;
+  border-color: yellow;
+  border-width: 5px;
+  
+}
+
+
+.arrowDown {
+  z-index: 2;
+  width: 0; 
+  height: 0; 
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 40px solid yellow;
+  border-style: inset;
+  margin: 0 auto;
+  top: 25px;
+  position: relative;
+}
+
+.rightYellowArrow {
+  background-color: yellow;
+  width: 85px;
+  height: 85px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  position: relative;
+  top: 2px;
+  right: -5px;
+  display: inline-block;
+  border-style: outset;
+  border-color: yellow;
+  border-width: 5px;
+}
+
+.arrowRight {
+  z-index: 2;
+  width: 0; 
+  height: 0; 
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 40px solid yellow;
+  border-style: inset;
+  margin: 0 auto;
+  top: 10px;
+  left: 10px;
+  position: relative;
+}
+
+.magicMeter {
+  background-color: green;
+  z-index: 1;
+  width: 435px;
+  height: 35px;
+  position: absolute;
+  border: 5px solid white;
+  border-radius: 5px;
+  top:100px;
+  left: 103px;;
+}
+
+.leftZArrow {
+  background: red;
+  display: inline-block;
+  height: 60px;
+  left: 155px;
+  top: 295px;
+  position: fixed;
+  width: 30px;
+  border-style: outset;
+  border-width: 5px;
+  border-color: red;
+}
+.leftZArrow:before {
+  border-right: 30px solid red;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  content: "";
+  height: 0;
+  top: -5px;
+  position: absolute;
+  left: -35px;
+  width: 0;
+}
+
+.center {
+  perspective: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.center > .center-box {
+  transition: all .5s linear;
+  transform-style: preserve-3d;
+}
+.inventory {
+  background-color: blue;
+  padding: 10px;
+  height: 528px;
+  width: 1060px;
+  border-width: 77px 95px 40px 95px;
+  border-color: black;
+  border-style: outset;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+  grid-template-rows: 1fr 1fr 1fr 1fr ;
+  grid-column-gap: 15px;
+  grid-row-gap: 2px;
+}
+
+.equipment {
+  background-color: blue;
+  padding: 10px;
+  height: 528px;;
+  width: 1060px;
+  border-width: 77px 40px 40px 40px;
+  border-color: green;;
+  border-style: outset;
+  display: grid;
+  padding: 20px 20px 20px 0;
+  grid-template-columns: 1fr 380px 1fr 1fr 1fr ;
+  grid-template-rows: 25% 25% 25% 25% ;
+  grid-column-gap: 15px;
+  grid-row-gap: 2px;
+}
+
+.linkEquipped {
+  background: yellow;
+  grid-row-end: span 4;
+}
+
+.equipmentItem {
+  background-color: red;
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.equipmentItem img {
+  width: 60%;
+}
+
+.equipmentItem::before {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  
+}
+
+.inventoryItem {
+  background-color: red;
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.inventoryItem img {
+  width: 100%;
+}
+.inventoryItem::before {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  
+}
+
+.inventoryItem::before:hover {
+  border: 10px dashed white;
+}
+
+.inventoryItem, 
+.inventoryItem::before {
+  height: 86%;
+  width: 86%;
+}
+
+.map {
+  background-color: blue;
+  height: 528px;
+  width: 1060px;
+  border-width: 77px 40px 40px 40px;
+  border-color: red;
+  border-style: outset;
+}
+
+.quest {
+  background-color: brown;
+  height: 528px;
+  width: 1060px;
+
+}
+
+
+
+.rightRArrow {
+  background: red;
+  display: inline-block;
+  height: 60px;
+  right: 155px;
+  top: 295px;
+  position: fixed;
+  width: 30px;
+  border-style: outset;
+  border-width: 5px;
+  border-color: red;
+}
+.rightRArrow:before {
+  border-left: 30px solid red;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  content: "";
+  height: 0;
+  top: -5px;
+  left: 25px;;
+  position: absolute;
+  right: -30px;
+  width: 0;
+}
+
+.bottom {
+  background-color: yellow;
+  position: fixed;
+  bottom: 20px;
+  width: 1058px;
+  height: 53px;;
+  margin: auto;
+  left: 154px;;
+}
+
+
+.rupees {
+  position: fixed;
+  background-color: blue;
+  height: 53px;
+  width: 180px;;
+  left: 112px;
+  display: flex;
+}
+
+.rupee {
+  height: 100%;
+}
+
+.rupeeCount {
+  font-size: 50px;
+  padding-left: 20px;
+  color: white;
+}
+
+.selectText {
+  position: fixed;
+  background-color: green;
+  height: 70px;
+  width: 545px;;
+  left: 412px;
+  bottom: 20px;
+  border-style: outset;
+  border-width: 10px;
+  border-color: green;
+}
